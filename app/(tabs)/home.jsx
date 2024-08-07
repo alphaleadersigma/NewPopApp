@@ -219,6 +219,19 @@ const Home = () => {
           style={styles.SilverLake}
         />
         </Pressable>
+        <Pressable onPress={() => router.push('/Buisnesses/Rosebowl')}>
+          <Image source={require('/Users/txt.hackathon/Desktop/BackUpPopApp/PopApp/POPAP/assets/pexels-photo-10074785.webp')}
+          style={styles.Rosebowl}/>
+        </Pressable>
+        <Pressable onPress={() => router.push('/Buisnesses/Alameda')}>
+          <Image source={require('/Users/txt.hackathon/Desktop/BackUpPopApp/PopApp/POPAP/assets/o.jpg')}
+           style={styles.Alameda}/>
+
+        </Pressable>
+        <Pressable onPress={() => router.push('/Buisnesses/Melrose')}>
+        <Image source={require('/Users/txt.hackathon/Desktop/BackUpPopApp/PopApp/POPAP/assets/melrose.webp')}
+        style={styles.Melrose}/>
+        </Pressable>
       </ScrollView>
     </View>
   );
@@ -275,6 +288,30 @@ const styles = StyleSheet.create({
     marginTop: -200, // Adjust as needed
     borderRadius: 20,
     top: -720,
+    right: 0,
+  },
+  Rosebowl: {
+    width: 350,
+    height: 110,
+    marginTop: -200, // Adjust as needed
+    borderRadius: 20,
+    top: -590,
+    right: 0,
+  },
+    Alameda: {
+    width: 350,
+    height: 110,
+    marginTop: -200, // Adjust as needed
+    borderRadius: 20,
+    top: -460,
+    right: 0,
+  },
+  Melrose: {
+    width: 350,
+    height: 110,
+    marginTop: -200, // Adjust as needed
+    borderRadius: 20,
+    top: -330,
     right: 0,
   },
 });

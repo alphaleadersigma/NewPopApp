@@ -2,14 +2,14 @@ import React, { useRef } from "react";
 import { StyleSheet, View, Text, Image, Pressable } from "react-native";
 import Carousel from "react-native-reanimated-carousel";
 import { router } from 'expo-router'
-const Silver = require("/Users/txt.hackathon/Desktop/BackUpPopApp/PopApp/POPAP/assets/IMG_9492.webp");
-const Silver2 = require("/Users/txt.hackathon/Desktop/BackUpPopApp/PopApp/POPAP/assets/image.png");
-const Silver3 = require("/Users/txt.hackathon/Desktop/BackUpPopApp/PopApp/POPAP/assets/38C0FA27-4FAD-45C4-A637-EF00D5A15DE9.webp")
+const Rose = require("/Users/txt.hackathon/Desktop/BackUpPopApp/PopApp/POPAP/assets/Rose-Bowl-Flea-Market-1-e1552133799525.webp");
+const Rose2 = require("/Users/txt.hackathon/Desktop/BackUpPopApp/PopApp/POPAP/assets/945x596-Rose-Bowl-Flea-Market_0003_Layer-8_c3874c415bc6570c0135981023e928db_daae8725-a013-f323-7cebdc163f84a0ba_940f99e66cc86fbdb8e45185a34c0913.webp")
+const Rose3 = require("/Users/txt.hackathon/Desktop/BackUpPopApp/PopApp/POPAP/assets/pexels-photo-10074785.webp")
 const BackArrow = require("/Users/txt.hackathon/Desktop/BackUpPopApp/PopApp/POPAP/assets/Back Arrow.png")
 const CarouselComponent = () => {
   const carouselRef = useRef(null);
 
-  const images = [Silver, Silver2, Silver3];
+  const images = [Rose, Rose2, Rose3];
 
   return (
     <View style={styles.carouselContainer}>
@@ -34,20 +34,13 @@ const SilverLake = () => {
       <Pressable onPress={() => router.navigate('/home')}>
         <Image source={BackArrow} style={styles.BackArrow}/>
       </Pressable>
-      <Text style={styles.Title}>Silverlake Flea Market</Text>
+      <Text style={styles.Title}>Rosebowl Flea Market</Text>
       <Text style={styles.ScheduleTitle}>Schedule:</Text>
-      <Text style={styles.Schedule1}>Friday, Time Open: 10am-3:30pm</Text>
-      <Text style={styles.Schedule2}>Saturday, Time Open: 8:30am-3:30pm</Text>
-      <Text style={styles.Schedule3}>Sunday, Time Open: 9:30am-3:30pm</Text>
+      <Text style={styles.Schedule1}>Every Second Sunday Of The Month</Text>
+      <Text style={styles.Schedule2}>VIP Entry 4:30am-4:30pm</Text>
+      <Text style={styles.Schedule3}>Regular Entry Starting At 9am-4:30pm</Text>
       <Text style={styles.Description}>
-        Voted locally as some of the best shopping in Los Angeles and
-        conveniently located dead center of Silverlake and Echo Park. The
-        Silverlake Flea offers a great shopping experience for some of LA’s best
-        vintage finds in the world of sustainable fashion. Check out the new
-        flagship brick and mortar DeBRIS @officialdebris located at 1931 West
-        Sunset Blvd LA 90026 Debris now serves as an Indoor Extension to ur
-        Fleamarket, offering an Air Conditioned environment with music, coffee
-        and independent sellers that revolve every Saturday and Sunday!
+      Vintage treasure hunters and bargain seekers flock to the legendary Rose Bowl Flea Market. Held the second Sunday of every month. Experience over 2,500 vendors full of antiques, vintage clothing, local art, and specialty products. The legendary Rose Bowl Flea Market is celebrating over 55 years of continued success. The flea market attracts 20,000 buyers, including celebrities and interior designers. Concession stands are sprinkled throughout the market, offering food and drinks.
       </Text>
     </View>
   );
@@ -100,7 +93,7 @@ const styles = StyleSheet.create({
     fontWeight: "400",
     wordWrap: "break-word",
     top: -325,
-    right: 60
+    right: 50
   },
   Schedule2: {
     color: "white",
@@ -108,7 +101,7 @@ const styles = StyleSheet.create({
     fontWeight: "400",
     wordWrap: "break-word",
     top: -315,
-    right: 42
+    right: 85
   },
 
   Schedule3 : {
@@ -117,7 +110,7 @@ const styles = StyleSheet.create({
     fontWeight:  "400",
     wordWrap: "break-word",
     top: -305,
-    right: 47
+    right: 40
 
   },
   carouselContainer: {
@@ -138,7 +131,7 @@ const styles = StyleSheet.create({
   },
 
   BackArrow: {
-    top: -300,
+    top: -290,
     right: 160,
     height: 35,
     width:40,

@@ -2,14 +2,14 @@ import React, { useRef } from "react";
 import { StyleSheet, View, Text, Image, Pressable } from "react-native";
 import Carousel from "react-native-reanimated-carousel";
 import { router } from 'expo-router'
-const Silver = require("/Users/txt.hackathon/Desktop/BackUpPopApp/PopApp/POPAP/assets/IMG_9492.webp");
-const Silver2 = require("/Users/txt.hackathon/Desktop/BackUpPopApp/PopApp/POPAP/assets/image.png");
-const Silver3 = require("/Users/txt.hackathon/Desktop/BackUpPopApp/PopApp/POPAP/assets/38C0FA27-4FAD-45C4-A637-EF00D5A15DE9.webp")
+const Melrose = require("/Users/txt.hackathon/Desktop/BackUpPopApp/PopApp/POPAP/assets/melrose3.webp");
+const Melrose2 = require("/Users/txt.hackathon/Desktop/BackUpPopApp/PopApp/POPAP/assets/melrose2.webp")
+const Melrose3 = require("/Users/txt.hackathon/Desktop/BackUpPopApp/PopApp/POPAP/assets/melrose3.webp")
 const BackArrow = require("/Users/txt.hackathon/Desktop/BackUpPopApp/PopApp/POPAP/assets/Back Arrow.png")
 const CarouselComponent = () => {
   const carouselRef = useRef(null);
 
-  const images = [Silver, Silver2, Silver3];
+  const images = [Melrose, Melrose2, Melrose3];
 
   return (
     <View style={styles.carouselContainer}>
@@ -34,20 +34,11 @@ const SilverLake = () => {
       <Pressable onPress={() => router.navigate('/home')}>
         <Image source={BackArrow} style={styles.BackArrow}/>
       </Pressable>
-      <Text style={styles.Title}>Silverlake Flea Market</Text>
+      <Text style={styles.Title}>Melrose Trading Post</Text>
       <Text style={styles.ScheduleTitle}>Schedule:</Text>
-      <Text style={styles.Schedule1}>Friday, Time Open: 10am-3:30pm</Text>
-      <Text style={styles.Schedule2}>Saturday, Time Open: 8:30am-3:30pm</Text>
-      <Text style={styles.Schedule3}>Sunday, Time Open: 9:30am-3:30pm</Text>
+      <Text style={styles.Schedule1}>Every Sunday Of The Month, Open Until 10am-5pm </Text>
       <Text style={styles.Description}>
-        Voted locally as some of the best shopping in Los Angeles and
-        conveniently located dead center of Silverlake and Echo Park. The
-        Silverlake Flea offers a great shopping experience for some of LA’s best
-        vintage finds in the world of sustainable fashion. Check out the new
-        flagship brick and mortar DeBRIS @officialdebris located at 1931 West
-        Sunset Blvd LA 90026 Debris now serves as an Indoor Extension to ur
-        Fleamarket, offering an Air Conditioned environment with music, coffee
-        and independent sellers that revolve every Saturday and Sunday!
+      The Melrose Trading Post is operated by Greenway Arts Alliance, a community-based nonprofit organization whose mission is to unite communities through art, education and enterprise. gaa-logo Every Sunday, the Melrose Trading Post offers a constantly evolving experience, with a curated selection of handcrafted artisan goods, eclectic art and craft, vintage fashion, antique furniture and one-of-a-kind treasures
       </Text>
     </View>
   );
@@ -100,7 +91,6 @@ const styles = StyleSheet.create({
     fontWeight: "400",
     wordWrap: "break-word",
     top: -325,
-    right: 60
   },
   Schedule2: {
     color: "white",
@@ -108,7 +98,7 @@ const styles = StyleSheet.create({
     fontWeight: "400",
     wordWrap: "break-word",
     top: -315,
-    right: 42
+    right: 85
   },
 
   Schedule3 : {
@@ -117,7 +107,7 @@ const styles = StyleSheet.create({
     fontWeight:  "400",
     wordWrap: "break-word",
     top: -305,
-    right: 47
+    right: 40
 
   },
   carouselContainer: {
@@ -138,7 +128,7 @@ const styles = StyleSheet.create({
   },
 
   BackArrow: {
-    top: -300,
+    top: -290,
     right: 160,
     height: 35,
     width:40,
