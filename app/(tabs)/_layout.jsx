@@ -10,7 +10,14 @@ const TabsLayout = () => {
   const homeIconActive3 = require('../../assets/profileiconact.png')
 
   return (
-    <Tabs>
+    <Tabs
+    screenOptions ={{
+      tabBarShowLabel: false,
+      tabBarStyle: {
+        backgroundColor: '#474747' 
+      }
+    }
+    }>
       <Tabs.Screen
         name="home"
         options={{
