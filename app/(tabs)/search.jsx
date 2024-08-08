@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View,Image, TextInput, Alert, Pressable } from 'react-native'
 import React from 'react'
-
+import { router } from 'expo-router'
 
 const Rectangle = require('../../assets/Rectangle 72.png')
 const Rectangle2 = require('../../assets/Rectangle 49.png')
@@ -61,7 +61,7 @@ const buttonPress = () => {
       placeholder="Location"
       placeholderTextColor="white">
       </TextInput>  
-      <Pressable onPress={buttonPress}
+      <Pressable onPress={() => router.push('/posting/home')}
       style={styles.button}
       >
         <Text style={styles.textButton}>Create Post</Text>

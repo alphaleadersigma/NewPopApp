@@ -5,7 +5,6 @@ import { StyleSheet, Text, View, Image, TextInput, ScrollView } from 'react-nati
 //This is the only dependency that you need to install: npm install react-native-qrcode-svg
 import QRCode from 'react-native-qrcode-svg'; 
 const profilePic = require('../../assets/favicon.png'); 
-const smallProfilePic = require('../../assets/favicon.png'); 
 
 const Profile = () => {
   // Sample data for the profile
@@ -42,27 +41,6 @@ const Profile = () => {
           />
         </View>
 
-      {/* Profile pic on left with description on right*/}
-      <View style={styles.descriptionBoxContainer}>
-        <Image
-          source={smallProfilePic} // Replace with dynamic image source
-          style={styles.smallProfileImage}
-        />
-        <View style={styles.descriptionBox}>
-          <TextInput style={styles.bottomDescription}>{user.bottomDescription}</TextInput>
-        </View>
-      </View>
-
-      {/* Again, Profile pic on left with description on right*/}
-      <View style={styles.descriptionBoxContainer}>
-        <Image
-          source={smallProfilePic} // Replace with dynamic image source
-          style={styles.smallProfileImage}
-        />
-        <View style={styles.descriptionBox}>
-          <TextInput style={styles.bottomDescription}>{user.bottomDescription}</TextInput>
-        </View>
-      </View>
 
 
 
@@ -117,33 +95,7 @@ const styles = StyleSheet.create({
   qrCodeContainer: {
     marginTop: 20,
   },
-  descriptionBoxContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginTop: 20,
-    marginHorizontal: 10,
-  },
-  smallProfileImage: {
-    width: 50,
-    height: 50,
-    borderRadius: 25, // Makes the image circular
-    borderWidth: 2,
-    borderColor: '#ddd',
-    marginRight: 10,
-  },
-  descriptionBox: {
-    flex: 1,
-    backgroundColor: '#D3D3D3',
-    borderColor: '#FFF',
-    borderWidth: 1,
-    borderRadius: 5,
-    padding: 10,
-    justifyContent: 'center',
-  },
-  bottomDescription: {
-    fontSize: 14,
-    color: '#FFF',
-  },
+ 
 });
 
 export default Profile;
