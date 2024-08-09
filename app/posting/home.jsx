@@ -232,6 +232,13 @@ const Home = () => {
         <Image source={require('/Users/txt.hackathon/Desktop/BackUpPopApp/PopApp/POPAP/assets/melrose.webp')}
         style={styles.Melrose}/>
         </Pressable>
+        <Pressable onPress={() => router.push('/Buisnesses/OpenAir')}>
+        </Pressable>
+
+        <Pressable onPress={() => router.push('/Buisnesses/OpenAir')}>
+        <Image source={require('/Users/txt.hackathon/Desktop/BackUpPopApp/PopApp/POPAP/assets/Rectangle 72.png')}
+        style={styles.Roadium}/>
+        </Pressable>
       </ScrollView>
     </View>
   );
@@ -312,6 +319,15 @@ const styles = StyleSheet.create({
     marginTop: -200, // Adjust as needed
     borderRadius: 20,
     top: -330,
+    right: 0,
+  },
+
+  Roadium: {
+    width: 350,
+    height: 110,
+    marginTop: -200, // Adjust as needed
+    borderRadius: 20,
+    top: -200,
     right: 0,
   },
 });

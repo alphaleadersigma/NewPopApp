@@ -11,7 +11,8 @@ const RootLayout = () => {
     <Stack.Screen name="Buisnesses/Rosebowl" options={{headerShown: false}} />
      <Stack.Screen name="Buisnesses/Alameda" options={{headerShown: false}} />
      <Stack.Screen name="Buisnesses/Melrose" options={{headerShown: false}} />
-     <Stack.Screen name="posting/home" options={{headerShown: false}} />
+     <Stack.Screen name="posting" options={{headerShown: false}} />
+     <Stack.Screen name="Buisnesses/OpenAir" options={{headerShown: false}} />
   </Stack>
   )
 }

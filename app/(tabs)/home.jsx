@@ -232,6 +232,7 @@ const Home = () => {
         <Image source={require('/Users/txt.hackathon/Desktop/BackUpPopApp/PopApp/POPAP/assets/melrose.webp')}
         style={styles.Melrose}/>
         </Pressable>
+  
       </ScrollView>
     </View>
   );
