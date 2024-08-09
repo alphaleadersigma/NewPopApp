@@ -6,7 +6,7 @@ import {Image} from 'expo-image';
 //This is the only dependency that you need to install: npm install react-native-qrcode-svg
 // import QRCode from 'react-native-qrcode-svg'; 
 import Card from '../../Components/Card';
-const profilePic = require('../../assets/free-images.jpg'); 
+const profilePic = require('../../assets/catdonovan.jpg'); 
 
 const Profile = () => {
   // Sample data for the profile
