@@ -36,7 +36,7 @@ const Rosebowl = () => {
         <CarouselComponent/>
       </View>
 
-      <Pressable onPress={() => router.navigate('/home')}>
+      <Pressable onPress={() => router.back()}>
         <Image source={BackArrow} style={styles.BackArrow}/>
       </Pressable>
 

@@ -1,7 +1,8 @@
 // Profile.jsx
 import React from 'react';
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Pressable } from 'react-native';
 import {Image} from 'expo-image';
+import { router } from 'expo-router';
 
 //This is the only dependency that you need to install: npm install react-native-qrcode-svg
 // import QRCode from 'react-native-qrcode-svg'; 
@@ -17,13 +18,11 @@ const Profile = () => {
     qrCodeValue: 'https://venmo.com' 
   };
 
-  const Rose = require("../../assets/o.jpg");
-
   const fakeFavorites = [
-    {id:1, uri:require('../../assets/o.jpg'), name:'Spontaneous Anime Santa Monica'},
-    {id:2, uri:require('../../assets/o(2).jpg'), name:'El Elotero Man'},
-    {id:3, uri:require('../../assets/melrose3.webp'), name:'Anime Expo'},
-    {id:4, uri:require('../../assets/pexels-photo-10074785.webp'), name:'Mom\'s Restaurant'},
+    {id:1, uri:require('../../assets/o.jpg'), name:'Spontaneous Anime Santa Monica', toPage: '/Buisnesses/Alameda'},
+    {id:2, uri:require('../../assets/o(2).jpg'), name:'El Elotero Man', toPage: '/Buisnesses/Melrose'},
+    {id:3, uri:require('../../assets/melrose3.webp'), name:'Anime Expo', toPage: '/Buisnesses/Rosebowl'},
+    {id:4, uri:require('../../assets/pexels-photo-10074785.webp'), name:'Mom\'s Restaurant', toPage: '/Buisnesses/SilverLake'},
   ];
 
   return (
@@ -42,7 +41,9 @@ const Profile = () => {
 
       <View style={styles.cardContainer}>
         {fakeFavorites.map(place => (
-          <Card key={place.id} uri={place.uri} name={place.name} />
+          <Pressable onPress={() => {router.push(place.toPage)}}>
+            <Card key={place.id} uri={place.uri} name={place.name} />
+          </Pressable>
         ))}
       </View>
     </ScrollView>

@@ -2,7 +2,6 @@ import React from 'react';
 import { View, StyleSheet, Text, Image } from 'react-native';
 
 const Card = ({uri, name}) => {
-    
     return (
         <View style={styles.container}>
             <Image source={uri} style={styles.image}></Image>
