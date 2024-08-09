@@ -11,61 +11,65 @@ const [time, onChangeTime] = React.useState('')
 const [date, onChangeDate] = React.useState('')
 const [location, onChangeLocation] = React.useState('')
 const buttonPress = () => {
-  Alert.alert("post created")
+  Alert.alert("Post Created")
 }
      
   
   return (
     <View style={styles.Post}>
        <Image source={Rectangle}
-      style={styles.Rectangle}/>
+        style={styles.Rectangle}/>
+      <View style={{alignItems: 'center', justifyContent: 'center'}}>
+        <TextInput
+          style={styles.input}
+          onChangeText={onChangeTitle}
+          value={Text}
+          placeholder="Insert Title Here"
+          placeholderTextColor="white"
+        >
+        </TextInput>
+      </View>
       <TextInput
-      style={styles.input}
-      onChangeText={onChangeTitle}
-      value={Text}
-      placeholder="Insert Title Here"
-      placeholderTextColor="white"
-      >
-      </TextInput>
-      <TextInput
-      style={styles.input2}
-      onChangeText={onChangeTime}
-      value={Text}
-      placeholder="Time"
-      placeholderTextColor="white"
-      >
-      </TextInput>  
-      <TextInput
-      style={styles.input3}
-      onChangeText={onChangeDate}
-      value={Text}
-      placeholder="Date"
-      placeholderTextColor="white"
+        style={styles.input2}
+        onChangeText={onChangeTime}
+        value={Text}
+        placeholder="Time"
+        placeholderTextColor="white"
       >
       </TextInput>  
       <TextInput
-      editable
-      multiline
-      numberOfLine={5}
-      style={styles.input4}
-      onChangeText={onChangeDescription}
-      value={Text}
-      placeholder="Description"
-      placeholderTextColor="white"
+        style={styles.input3}
+        onChangeText={onChangeDate}
+        value={Text}
+        placeholder="Date"
+        placeholderTextColor="white"
+      >
+      </TextInput>  
+      <TextInput
+        editable
+        multiline
+        numberOfLine={5}
+        style={styles.input4}
+        onChangeText={onChangeDescription}
+        value={Text}
+        placeholder="Description"
+        placeholderTextColor="white"
       >
       </TextInput> 
        <TextInput
-      style={styles.input5}
-      onChangeText={onChangeLocation}
-      value={Text}
-      placeholder="Location"
-      placeholderTextColor="white">
+        style={styles.input5}
+        onChangeText={onChangeLocation}
+        value={Text}
+        placeholder="Location"
+        placeholderTextColor="white">
       </TextInput>  
-      <Pressable onPress={() => router.push('/posting/home')}
-      style={styles.button}
-      >
-        <Text style={styles.textButton}>Create Post</Text>
-      </Pressable>
+      <View style={{alignItems: 'center', justifyContent: 'center'}}>
+        <Pressable onPress={buttonPress}
+          style={styles.button}
+        >
+          <Text style={styles.textButton}>Create Post</Text>
+        </Pressable>
+      </View>
     </View>
   )
 }
@@ -79,16 +83,12 @@ Post: {
  flex: 1,
 },
 Rectangle: {
-height: 210,
-width: 408,
-// borderRadius: 10,
-// aligntItems: 'center',
+  height: 210,
 },
 
 input: {
   height: 50,
   width: 150,
-  left: 120,
   alignItems: 'center',
   justifyContent: 'center',
   backgroundColor: '#474747',
@@ -144,9 +144,8 @@ button: {
   backgroundColor: '#474747',
   aligntItems: 'center',
   justifyContent: 'center',
-  left: 150,
   borderRadius: 10,
-  marginTop: 20,
+  marginTop: 100,
 },
 textButton: {
   color: 'white',

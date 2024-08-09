@@ -5,14 +5,14 @@ import { StyleSheet, View, Image, Text } from 'react-native';
 export default function CustomerReview({ uri, customerReview }) {
   return (
     <View style={styles.descriptionBoxContainer}>
-    <Image
-      source={uri} // Replace with dynamic image source
-      style={styles.smallProfileImage}
-    />
-    <View style={styles.descriptionBox}>
-      <Text style={styles.bottomDescription}>{customerReview}</Text>
+      <Image
+        source={uri} // Replace with dynamic image source
+        style={styles.smallProfileImage}
+      />
+      <View style={styles.descriptionBox}>
+        <Text style={styles.bottomDescription}>{customerReview}</Text>
+      </View>
     </View>
-  </View>
 
   );
 }
@@ -21,12 +21,12 @@ const styles = StyleSheet.create({
     descriptionBoxContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginTop: 20,
-        marginHorizontal: 10,
+        marginTop: 10,
+        marginHorizontal: 30,
       },
       smallProfileImage: {
-        width: 50,
-        height: 50,
+        width: 40,
+        height: 40,
         borderRadius: 25, // Makes the image circular
         borderWidth: 2,
         borderColor: '#ddd',

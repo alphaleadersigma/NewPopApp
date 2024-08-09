@@ -1,18 +1,20 @@
 import React, { useRef } from "react";
-import { StyleSheet, View, Text, Image, Pressable } from "react-native";
+import { StyleSheet, View, Text, Image, TouchableOpacity, ScrollView, Pressable } from "react-native";
 import Carousel from "react-native-reanimated-carousel";
-import { router } from 'expo-router'
-const Rose = require("/Users/txt.hackathon/Desktop/BackUpPopApp/PopApp/POPAP/assets/o.jpg");
-const Rose2 = require("/Users/txt.hackathon/Desktop/BackUpPopApp/PopApp/POPAP/assets/o(2).jpg")
-const Rose3 = require("/Users/txt.hackathon/Desktop/BackUpPopApp/PopApp/POPAP/assets/o (1).jpg")
-const BackArrow = require("/Users/txt.hackathon/Desktop/BackUpPopApp/PopApp/POPAP/assets/Back Arrow.png")
+import { router } from 'expo-router';
+import CustomerReview from "../../Components/Customerreview";
+
+
+const Rose = require("../../assets/o.jpg");
+const Rose2 = require("../../assets/o(2).jpg")
+const Rose3 = require("../../assets/o (1).jpg")
+const BackArrow = require("../../assets/Back Arrow.png")
 const CarouselComponent = () => {
   const carouselRef = useRef(null);
 
   const images = [Rose, Rose2, Rose3];
 
   return (
-    <View style={styles.carouselContainer}>
       <Carousel
         ref={carouselRef}
         data={images}
@@ -20,159 +22,120 @@ const CarouselComponent = () => {
           <Image source={item} style={styles.carouselImage} />
         )}
         loop
-        width={428}
-        height={308}
+        width={420}
+        height={280}
       />
-    </View>
   );
 };
 
-const SilverLake = () => {
+const Alameda = () => {
+  const image = require('../../assets/person.png');
   return (
-    <View style={styles.Profile}>
-      <CarouselComponent />
+    <ScrollView style={styles.Profile}>
+      <View style={{alignItems: 'center', justifyContent: 'center'}}>
+        <CarouselComponent/>
+      </View>
+
       <Pressable onPress={() => router.navigate('/home')}>
         <Image source={BackArrow} style={styles.BackArrow}/>
       </Pressable>
-      <Text style={styles.Title}>Alameda Swapmeet</Text>
-      <Text style={styles.ScheduleTitle}>Schedule:</Text>
-      <Text style={styles.Schedule1}>Monday: 8:00am - 6:30pm </Text>
-      <Text style={styles.Schedule4}>Tuesday: Closed</Text>
-      <Text style={styles.Schedule2}>Wed: 8:00 AM - 6:30 PM</Text>
-      <Text style={styles.Schedule3}>Thu: 8:00 AM - 6:30 PM</Text>
-      <Text style={styles.Schedule5}>Fri: 8:00 AM - 6:30 PM</Text>
-      <Text style={styles.Schedule6}>Sat: 7:00 AM - 6:30 PM</Text>
-      <Text style={styles.Schedule7}>Sun: 7:00 AM - 6:30 PM</Text>
 
-      <Text style={styles.Description}>
-      Vintage treasure hunters and bargain seekers flock to the legendary Rose Bowl Flea Market. Held the second Sunday of every month. Experience over 2,500 vendors full of antiques, vintage clothing, local art, and specialty products. The legendary Rose Bowl Flea Market is celebrating over 55 years of continued success. The flea market attracts 20,000 buyers, including celebrities and interior designers. Concession stands are sprinkled throughout the market, offering food and drinks.
-      </Text>
-    </View>
+      <Text style={styles.Title}>Alameda Swapmeet</Text>
+
+      <View style={styles.scheduleContainer}>
+        <Text style={styles.ScheduleText}>Monday: 8:00am - 6:30pm</Text>
+        <Text style={styles.ScheduleText}>Tuesday: Closed</Text>
+        <Text style={styles.ScheduleText}>Wednesday, Thursday: 8:00am - 6:30pm</Text>
+        <Text style={styles.ScheduleText}>Friday, Saturday, Sunday: 7:00am - 6:30pm</Text>
+      </View>
+
+      <View style={styles.descriptionContainer}>
+        <Text style={styles.Description}>
+          {'\t'}Vintage treasure hunters and bargain seekers flock to the legendary Rose
+          Bowl Flea Market. Held the second Sunday of every month. Experience over 2,500
+          vendors full of antiques, vintage clothing, local art, and specialty products.
+          The legendary Rose Bowl Flea Market is celebrating over 55 years of continued
+          success. The flea market attracts 20,000 buyers, including celebrities and
+          interior designers. Concession stands are sprinkled throughout the market,
+          offering food and drinks.
+        </Text>
+      </View>
+
+      <TouchableOpacity style={styles.Button} onPress={() => openMap('1911 Sunset Blvd, Los Angeles, CA 90026-3222')}>
+        <Text style={styles.Address}>1911 Sunset Blvd, Los Angeles, CA 90026-3222</Text>
+      </TouchableOpacity>
+
+      <Text style={styles.Reviews}>Customer Reviews</Text>
+
+      <CustomerReview uri={image} customerReview={'This market is very nice.'}></CustomerReview>
+      <CustomerReview uri={image} customerReview={'The price is resonable.'}></CustomerReview>
+      <CustomerReview uri={image} customerReview={'Highly recommend. I anjoyed them last time and they have a lot of good stuff.'}></CustomerReview>
+    </ScrollView>
   );
 };
 
-export default SilverLake;
+export default Alameda;
 
 const styles = StyleSheet.create({
+  carouselImage: {
+    width: 420,
+    height: 280,
+    borderRadius: 30,
+  },
+ 
   Profile: {
     flex: 1,
     backgroundColor: "#1C1C1C",
-    justifyContent: "center",
-    alignItems: "center",
+    posiiton: 'absolute',
+  },
+  BackArrow: {
+    position: 'absolute',
+    bottom: 180,
+    marginLeft: 20,
   },
   Title: {
-    fontSize: 18,
-    fontWeight: 600,
-    lineHeight: 22,
+    fontSize: 32,
     color: "#FFF",
-    top: -90,
-    
-    fontFamily: "Inter",
     textAlign: 'center',
+    fontWeight: 'bold',
+    marginTop: 15,
+    marginBottom: 10
   },
-
+  scheduleContainer: {
+    marginLeft: 15,
+  },
+  ScheduleText: {
+    color: "white",
+    fontSize: 16,
+    lineHeight: 20,
+  },
+  descriptionContainer: {
+    margin: 15,
+  },
   Description: {
-    width: 355,
-    height: 200,
-    flexShrink: 0,
-    fontWeight: "400",
-    lineHeight: 18.2,
-    wordWrap: "break-word",
-    fontSize: 13,
+    lineHeight: 18,
+    fontSize: 14,
     color: "#fff",
-    top: -255,
   },
-  
-  ScheduleTitle: {
-    fontSize: 18,
-    top: -90,
-    width: 355,
-    height: 200,
-    color: '#fff',
-    
+  Reviews: {
+    color: 'white',
+    fontSize: 20,
+    textAlign: 'center',
+    fontWeight: 'bold',
+    marginTop: 25,
   },
-  
-  Schedule1 : {
-    color: "white",
-    fontSize: 16,
-    fontWeight:  "400",
-    wordWrap: "break-word",
-    top: -265,
-    right: 75
-  
-  },
-  Schedule4: {
-    color: "white",
-    fontSize: 16,
-    fontWeight: "400",
-    wordWrap: "break-word",
-    top: -265,
-    right: 116
-  },
-  Schedule2: {
-    color: "white",
-    fontSize: 16,
-    fontWeight: "400",
-    wordWrap: "break-word",
-    top: -265,
-    right: 85
-  },
-  
-  
-  Schedule3 : {
-    color: "white",
-    fontSize: 16,
-    fontWeight:  "400",
-    wordWrap: "break-word",
-    top: -265,
-    right: 85
-  
-  },
-  Schedule5: {
-    color: "white",
-    fontSize: 16,
-    fontWeight: "400",
-    wordWrap: "break-word",
-    top: -265,
-    right: 85
-  },
-  Schedule6: {
-    color: "white",
-    fontSize: 16,
-    fontWeight: "400",
-    wordWrap: "break-word",
-    top: -265,
-    right: 85
-  },
-  Schedule7: {
-    color: "white",
-    fontSize: 16,
-    fontWeight: "400",
-    wordWrap: "break-word",
-    top: -265,
-    right: 85
-  },
-  carouselContainer: {
-    width: 458,
-    alignItems: "center",
-    flex: 1,
-    borderRadius: 20, // Add this line
-    overflow: "hidden", // Add this line
-  },
-  carouselImage: {
-    width: 420,
-    height: 220,
-    resizeMode: "cover",
-    top: -20,
-    position: 'center',
-    borderRadius: 30,
-    left: 2,
-  },
-
-  BackArrow: {
-    top: -210,
-    right: 160,
+  Button: {  
+    backgroundColor: '#474747',
     height: 35,
-    width:40,
+    borderRadius: 10,
+    aligntItems: 'center',
+    justifyContent: 'center',
+    padding: 5,
+    margin: 20,
+    marginTop: 5
+  },
+  Address: {
+    color: 'white',
+    textAlign: 'center',
   },
 });

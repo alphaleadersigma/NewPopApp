@@ -215,21 +215,21 @@ const Home = () => {
         />
         <Pressable onPress={() => router.push('/Buisnesses/SilverLake')}>
         <Image 
-          source={require('/Users/txt.hackathon/Desktop/BackUpPopApp/PopApp/POPAP/assets/IMG_9492.webp')}
+          source={require('../../assets/IMG_9492.webp')}
           style={styles.SilverLake}
         />
         </Pressable>
         <Pressable onPress={() => router.push('/Buisnesses/Rosebowl')}>
-          <Image source={require('/Users/txt.hackathon/Desktop/BackUpPopApp/PopApp/POPAP/assets/pexels-photo-10074785.webp')}
+          <Image source={require('../../assets/pexels-photo-10074785.webp')}
           style={styles.Rosebowl}/>
         </Pressable>
         <Pressable onPress={() => router.push('/Buisnesses/Alameda')}>
-          <Image source={require('/Users/txt.hackathon/Desktop/BackUpPopApp/PopApp/POPAP/assets/o.jpg')}
+          <Image source={require('../../assets/o.jpg')}
            style={styles.Alameda}/>
 
         </Pressable>
         <Pressable onPress={() => router.push('/Buisnesses/Melrose')}>
-        <Image source={require('/Users/txt.hackathon/Desktop/BackUpPopApp/PopApp/POPAP/assets/melrose.webp')}
+        <Image source={require('../../assets/melrose.webp')}
         style={styles.Melrose}/>
         </Pressable>
       </ScrollView>
