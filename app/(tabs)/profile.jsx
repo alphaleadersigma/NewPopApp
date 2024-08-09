@@ -1,9 +1,11 @@
 // Profile.jsx
 import React from 'react';
-import { StyleSheet, Text, View, Image, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import {Image} from 'expo-image';
 
 //This is the only dependency that you need to install: npm install react-native-qrcode-svg
-import QRCode from 'react-native-qrcode-svg'; 
+// import QRCode from 'react-native-qrcode-svg'; 
+import Card from '../../Components/Card';
 const profilePic = require('../../assets/free-images.jpg'); 
 
 const Profile = () => {
@@ -15,9 +17,17 @@ const Profile = () => {
     qrCodeValue: 'https://venmo.com' 
   };
 
+  const Rose = require("../../assets/o.jpg");
+
+  const fakeFavorites = [
+    {id:1, uri:require('../../assets/o.jpg'), name:'Spontaneous Anime Santa Monica'},
+    {id:2, uri:require('../../assets/o(2).jpg'), name:'El Elotero Man'},
+    {id:3, uri:require('../../assets/melrose3.webp'), name:'Anime Expo'},
+    {id:4, uri:require('../../assets/pexels-photo-10074785.webp'), name:'Mom\'s Restaurant'},
+  ];
+
   return (
-    <ScrollView contentContainerStyle={styles.container}>
-      
+    <ScrollView style={styles.container}>
       <View style={styles.profileContainer}>
         <Image
           source={profilePic} 
@@ -28,18 +38,12 @@ const Profile = () => {
           <Text style={styles.name}>{user.name}</Text>
           <Text style={styles.description}>{user.description}</Text>
         </View>
+      </View>
 
-
-        <View style={styles.preferencesContainer}>
-          <Text style={styles.preferences}>{user.preferences}</Text>
-        </View>
-
-        <View style={styles.qrCodeContainer}>
-          <QRCode
-            value={user.qrCodeValue}
-            size={100} // Adjust size as needed
-          />
-        </View>
+      <View style={styles.cardContainer}>
+        {fakeFavorites.map(place => (
+          <Card key={place.id} uri={place.uri} name={place.name} />
+        ))}
       </View>
     </ScrollView>
   );
@@ -47,12 +51,14 @@ const Profile = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flexGrow: 1,
+    flex: 1,
     backgroundColor: '#333333',
-    padding: 100,
   },
   profileContainer: {
     alignItems: 'center',
+    height: 380,
+    backgroundColor: '#4f4f4f',
+    paddingTop: 70,
   },
   profileImage: {
     width: 200,
@@ -76,20 +82,13 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     paddingHorizontal: 20,
   },
-  preferencesContainer: {
-    borderColor: '#ddd',
-    borderWidth: 1,
-    borderRadius: 5,
-    padding: 10,
-    width: 400,
-  
-  },
-  preferences: {
-    fontSize: 14,
-    color: '#FFF',
-    lineHeight: 20,
-  },
-  qrCodeContainer: {
+  // qrCodeContainer: {
+  //   marginTop: 20,
+  // },
+  cardContainer: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
     marginTop: 20,
   },
  
