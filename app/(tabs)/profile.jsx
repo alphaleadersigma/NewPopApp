@@ -3,10 +3,12 @@ import React from 'react';
 import { StyleSheet, Text, View, ScrollView, Pressable } from 'react-native';
 import {Image} from 'expo-image';
 import { router } from 'expo-router';
+import Ionicons from '@expo/vector-icons/Ionicons';
 
 //This is the only dependency that you need to install: npm install react-native-qrcode-svg
 // import QRCode from 'react-native-qrcode-svg'; 
 import Card from '../../Components/Card';
+
 const profilePic = require('../../assets/catdonovan.jpg'); 
 
 const Profile = () => {
@@ -28,10 +30,15 @@ const Profile = () => {
   return (
     <ScrollView style={styles.container}>
       <View style={styles.profileContainer}>
+        <View style={styles.profileQR}>
         <Image
           source={profilePic} 
           style={styles.profileImage}
         />
+        <Pressable style={styles.qr} onPress={() => {router.push('qr')}}>
+          <Ionicons name="qr-code-outline" size={36} color="black" />
+        </Pressable>
+        </View>
 
         <View style={{alignItems: 'center', justifyContent: 'center', width: 450}}>
           <Text style={styles.name}>{user.name}</Text>
@@ -55,11 +62,19 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#333333',
   },
+  profileQR: {
+    flexDirection: 'row',
+  },
   profileContainer: {
     alignItems: 'center',
     height: 380,
     backgroundColor: '#4f4f4f',
     paddingTop: 70,
+  },
+  qr: {
+    marginLeft: 270,
+    position: 'absolute',
+    backgroundColor: 'white'
   },
   profileImage: {
     width: 200,
